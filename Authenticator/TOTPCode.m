@@ -10,9 +10,11 @@
 #include <CommonCrypto/CommonHMAC.h>
 
 @interface TOTPCode ()
+
 @property (nonatomic, copy) NSNumber *digits;
 @property (nonatomic, copy) NSString *algorithm;
 @property (nonatomic, copy) NSData *secret;
+
 @end
 
 @implementation TOTPCode

@@ -14,8 +14,10 @@
 @property (nonatomic, copy) NSString *description;
 
 -(NSString *) currentCode;
+-(NSString *) codeAtTime:(uint64_t) time;
 -(void) setSecret:(NSData *) secret;
 -(void) setDigits:(NSNumber *) digits;
 -(void) setAlgorithm:(NSString *) algorithm;
 -(NSNumber *) timeLeftInPeriod;
+
 @end
