@@ -21,6 +21,12 @@
 		FA5804A0167461C900DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
 		FA5804A816747D1200DEA9F8 /* MF_Base32Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */; };
 		FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */; };
+		FA5804CF16752EB500DEA9F8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5804B816752E9400DEA9F8 /* SenTestingKit.framework */; };
+		FA5804D016752EB500DEA9F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA58047116745CD500DEA9F8 /* UIKit.framework */; };
+		FA5804D116752EB500DEA9F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA58047316745CD500DEA9F8 /* Foundation.framework */; };
+		FA5804D716752EB500DEA9F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5804D516752EB500DEA9F8 /* InfoPlist.strings */; };
+		FA5804DA16752EB500DEA9F8 /* AuthenticatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804D916752EB500DEA9F8 /* AuthenticatorTests.m */; };
+		FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,13 @@
 		FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MF_Base32Additions.m; sourceTree = "<group>"; };
 		FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPCodesViewController.h; sourceTree = "<group>"; };
 		FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPCodesViewController.m; sourceTree = "<group>"; };
+		FA5804B816752E9400DEA9F8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FA5804CE16752EB500DEA9F8 /* AuthenticatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5804D416752EB500DEA9F8 /* AuthenticatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuthenticatorTests-Info.plist"; sourceTree = "<group>"; };
+		FA5804D616752EB500DEA9F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA5804D816752EB500DEA9F8 /* AuthenticatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticatorTests.h; sourceTree = "<group>"; };
+		FA5804D916752EB500DEA9F8 /* AuthenticatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticatorTests.m; sourceTree = "<group>"; };
+		FA5804DB16752EB500DEA9F8 /* AuthenticatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuthenticatorTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA5804CA16752EB500DEA9F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5804CF16752EB500DEA9F8 /* SenTestingKit.framework in Frameworks */,
+				FA5804D016752EB500DEA9F8 /* UIKit.framework in Frameworks */,
+				FA5804D116752EB500DEA9F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				FA58047716745CD500DEA9F8 /* Authenticator */,
+				FA5804D216752EB500DEA9F8 /* AuthenticatorTests */,
 				FA58047016745CD500DEA9F8 /* Frameworks */,
 				FA58046E16745CD500DEA9F8 /* Products */,
 			);
@@ -75,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				FA58046D16745CD500DEA9F8 /* Authenticator.app */,
+				FA5804CE16752EB500DEA9F8 /* AuthenticatorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +110,7 @@
 				FA58047116745CD500DEA9F8 /* UIKit.framework */,
 				FA58047316745CD500DEA9F8 /* Foundation.framework */,
 				FA58047516745CD500DEA9F8 /* CoreGraphics.framework */,
+				FA5804B816752E9400DEA9F8 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +155,26 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		FA5804D216752EB500DEA9F8 /* AuthenticatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA5804D816752EB500DEA9F8 /* AuthenticatorTests.h */,
+				FA5804D916752EB500DEA9F8 /* AuthenticatorTests.m */,
+				FA5804D316752EB500DEA9F8 /* Supporting Files */,
+			);
+			path = AuthenticatorTests;
+			sourceTree = "<group>";
+		};
+		FA5804D316752EB500DEA9F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA5804D416752EB500DEA9F8 /* AuthenticatorTests-Info.plist */,
+				FA5804D516752EB500DEA9F8 /* InfoPlist.strings */,
+				FA5804DB16752EB500DEA9F8 /* AuthenticatorTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +194,24 @@
 			productName = Authenticator;
 			productReference = FA58046D16745CD500DEA9F8 /* Authenticator.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FA5804CD16752EB500DEA9F8 /* AuthenticatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA5804DC16752EB500DEA9F8 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */;
+			buildPhases = (
+				FA5804C916752EB500DEA9F8 /* Sources */,
+				FA5804CA16752EB500DEA9F8 /* Frameworks */,
+				FA5804CB16752EB500DEA9F8 /* Resources */,
+				FA5804CC16752EB500DEA9F8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuthenticatorTests;
+			productName = AuthenticatorTests;
+			productReference = FA5804CE16752EB500DEA9F8 /* AuthenticatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -172,6 +236,7 @@
 			projectRoot = "";
 			targets = (
 				FA58046C16745CD500DEA9F8 /* Authenticator */,
+				FA5804CD16752EB500DEA9F8 /* AuthenticatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,7 +255,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA5804CB16752EB500DEA9F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5804D716752EB500DEA9F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA5804CC16752EB500DEA9F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA58046916745CD500DEA9F8 /* Sources */ = {
@@ -202,6 +291,15 @@
 				FA5804A0167461C900DEA9F8 /* TOTPCode.m in Sources */,
 				FA5804A816747D1200DEA9F8 /* MF_Base32Additions.m in Sources */,
 				FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA5804C916752EB500DEA9F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5804DA16752EB500DEA9F8 /* AuthenticatorTests.m in Sources */,
+				FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +328,14 @@
 				FA58048D16745CD500DEA9F8 /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		FA5804D516752EB500DEA9F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA5804D616752EB500DEA9F8 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -309,6 +415,36 @@
 			};
 			name = Release;
 		};
+		FA5804DD16752EB500DEA9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AuthenticatorTests/AuthenticatorTests-Prefix.pch";
+				INFOPLIST_FILE = "AuthenticatorTests/AuthenticatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FA5804DE16752EB500DEA9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AuthenticatorTests/AuthenticatorTests-Prefix.pch";
+				INFOPLIST_FILE = "AuthenticatorTests/AuthenticatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -326,6 +462,14 @@
 			buildConfigurations = (
 				FA58049516745CD500DEA9F8 /* Debug */,
 				FA58049616745CD500DEA9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA5804DC16752EB500DEA9F8 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA5804DD16752EB500DEA9F8 /* Debug */,
+				FA5804DE16752EB500DEA9F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
