@@ -52,10 +52,6 @@
         alg = kCCHmacAlgSHA512;
         hashLength = CC_SHA512_DIGEST_LENGTH;
     }
-    else if ([_algorithm isEqualToString:@"MD5"]) {
-        alg = kCCHmacAlgMD5;
-        hashLength = CC_MD5_DIGEST_LENGTH;
-    }
     else {
         NSLog(@"Trying to generate code with invalid algorithm <%@>", _algorithm);
         return nil;
