@@ -81,6 +81,13 @@
     return [NSString stringWithFormat:@"%0*ld", [_digits integerValue], code];
 }
 
+-(NSNumber *) timeLeftInPeriod {
+	uint64_t now = [[NSDate date] timeIntervalSince1970];
+    uint64_t periods = (uint64_t) floor(now / [_step intValue]);
+	int diff = [_step intValue] - (now - (periods * [_step intValue]));
+	return [NSNumber numberWithInt:diff];
+
+}
 
 
 @end

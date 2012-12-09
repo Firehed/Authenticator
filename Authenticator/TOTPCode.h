@@ -17,5 +17,5 @@
 -(void) setSecret:(NSData *) secret;
 -(void) setDigits:(NSNumber *) digits;
 -(void) setAlgorithm:(NSString *) algorithm;
-
+-(NSNumber *) timeLeftInPeriod;
 @end
