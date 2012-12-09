@@ -18,7 +18,9 @@
 		FA58048816745CD500DEA9F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58048716745CD500DEA9F8 /* Default-568h@2x.png */; };
 		FA58048B16745CD500DEA9F8 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58048916745CD500DEA9F8 /* MainStoryboard_iPhone.storyboard */; };
 		FA58048E16745CD500DEA9F8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58048C16745CD500DEA9F8 /* MainStoryboard_iPad.storyboard */; };
-		FA58049116745CD500DEA9F8 /* TOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049016745CD500DEA9F8 /* TOTPViewController.m */; };
+		FA5804A0167461C900DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
+		FA5804A816747D1200DEA9F8 /* MF_Base32Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */; };
+		FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +39,12 @@
 		FA58048716745CD500DEA9F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FA58048A16745CD500DEA9F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		FA58048D16745CD500DEA9F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		FA58048F16745CD500DEA9F8 /* TOTPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOTPViewController.h; sourceTree = "<group>"; };
-		FA58049016745CD500DEA9F8 /* TOTPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOTPViewController.m; sourceTree = "<group>"; };
+		FA58049E167461C900DEA9F8 /* TOTPCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPCode.h; sourceTree = "<group>"; };
+		FA58049F167461C900DEA9F8 /* TOTPCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPCode.m; sourceTree = "<group>"; };
+		FA5804A616747D1200DEA9F8 /* MF_Base32Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MF_Base32Additions.h; sourceTree = "<group>"; };
+		FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MF_Base32Additions.m; sourceTree = "<group>"; };
+		FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPCodesViewController.h; sourceTree = "<group>"; };
+		FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPCodesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 				FA58046E16745CD500DEA9F8 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		FA58046E16745CD500DEA9F8 /* Products */ = {
 			isa = PBXGroup;
@@ -85,12 +92,13 @@
 		FA58047716745CD500DEA9F8 /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
+				FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */,
+				FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */,
 				FA58048016745CD500DEA9F8 /* TOTPAppDelegate.h */,
 				FA58048116745CD500DEA9F8 /* TOTPAppDelegate.m */,
 				FA58048916745CD500DEA9F8 /* MainStoryboard_iPhone.storyboard */,
+				FA5804A1167461D100DEA9F8 /* Models */,
 				FA58048C16745CD500DEA9F8 /* MainStoryboard_iPad.storyboard */,
-				FA58048F16745CD500DEA9F8 /* TOTPViewController.h */,
-				FA58049016745CD500DEA9F8 /* TOTPViewController.m */,
 				FA58047816745CD500DEA9F8 /* Supporting Files */,
 			);
 			path = Authenticator;
@@ -108,6 +116,17 @@
 				FA58048716745CD500DEA9F8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA5804A1167461D100DEA9F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA58049E167461C900DEA9F8 /* TOTPCode.h */,
+				FA58049F167461C900DEA9F8 /* TOTPCode.m */,
+				FA5804A616747D1200DEA9F8 /* MF_Base32Additions.h */,
+				FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +199,9 @@
 			files = (
 				FA58047E16745CD500DEA9F8 /* main.m in Sources */,
 				FA58048216745CD500DEA9F8 /* TOTPAppDelegate.m in Sources */,
-				FA58049116745CD500DEA9F8 /* TOTPViewController.m in Sources */,
+				FA5804A0167461C900DEA9F8 /* TOTPCode.m in Sources */,
+				FA5804A816747D1200DEA9F8 /* MF_Base32Additions.m in Sources */,
+				FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
