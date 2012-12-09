@@ -31,9 +31,12 @@
 
 -(NSString *) currentCode {
     uint64_t now = [[NSDate date] timeIntervalSince1970];
-    // we're explicitly ignoring offset here; that should be done on the authenticating server
-    uint64_t periods = (uint64_t) floor(now / [_step intValue]);
-    
+	return [self codeAtTime:now];
+}
+
+
+-(NSString *) codeAtTime:(uint64_t) time {
+	uint64_t periods = (uint64_t) floor(time / [_step intValue]);
 
     // Crypto work is mostly copied from actual Google Authenticator app, see:
     // http://code.google.com/p/google-authenticator/source/browse/mobile/ios/Classes/OTPGenerator.m
