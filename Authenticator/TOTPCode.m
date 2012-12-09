@@ -81,9 +81,6 @@
     return [NSString stringWithFormat:@"%0*ld", [_digits integerValue], code];
 }
 
--(void) setSecretWithBase32String:(NSString *)base32Key {
-    
-}
 
 
 @end

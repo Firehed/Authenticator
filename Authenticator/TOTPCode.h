@@ -14,7 +14,6 @@
 @property (nonatomic, copy) NSString *description;
 
 -(NSString *) currentCode;
--(void) setSecretWithBase32String:(NSString *) base32Key;
 -(void) setSecret:(NSData *) secret;
 -(void) setDigits:(NSNumber *) digits;
 -(void) setAlgorithm:(NSString *) algorithm;
