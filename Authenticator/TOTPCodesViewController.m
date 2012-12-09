@@ -12,6 +12,8 @@
 
 @interface TOTPCodesViewController ()
 
+@property (nonatomic) NSArray *codes;
+
 @end
 
 @implementation TOTPCodesViewController
@@ -27,7 +29,14 @@
 
 - (void)viewDidLoad
 {
+	[NSTimer scheduledTimerWithTimeInterval:1 target:[self view] selector:@selector(reloadData) userInfo:nil repeats:YES];
     [super viewDidLoad];
+	
+	TOTPCode *code = [[TOTPCode alloc] init];
+	code.description = @"Some dude on the internet";
+	// some guy posted a screenshot of his code to google images... using it for testing purposes. security damage already done.
+	code.secret = [NSData dataWithBase32String:@"IVCTSZVKG6ZJZ5P4"];
+	_codes = @[code];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,9 +61,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [_codes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,11 +71,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     
-    TOTPCode *code = [[TOTPCode alloc] init];
-	// some guy posted a screenshot of his code to google images... using it for testing purposes. security damage already done.
-    code.secret = [NSData dataWithBase32String:@"IVCTSZVKG6ZJZ5P4"];
+	TOTPCode *code = [_codes objectAtIndex:indexPath.row];
+	NSNumber *timeLeft = code.timeLeftInPeriod;
     cell.textLabel.text = code.currentCode;
-    
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@s remain", code.description, timeLeft];
+	if ([timeLeft intValue] <= 5) {
+		cell.contentView.backgroundColor = [UIColor redColor];
+	}
+	else {
+		cell.contentView.backgroundColor = [UIColor clearColor];
+	}
+
     return cell;
 }
 
