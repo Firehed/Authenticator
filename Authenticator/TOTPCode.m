@@ -38,6 +38,9 @@
 
 
 -(NSString *) codeAtTime:(uint64_t) time {
+	if (![_secret length]) {
+		return @"No secret";
+	}
 	uint64_t periods = (uint64_t) floor(time / [_step intValue]);
 
     // Crypto work is mostly copied from actual Google Authenticator app, see:
