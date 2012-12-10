@@ -24,7 +24,8 @@
 
 
 -(TOTPCode *) init {
-    if (![super init]) {
+	self = [super init];
+    if (!self) {
         return nil;
     }
     _digits = @6;
@@ -112,11 +113,15 @@
 +(TOTPCode *) codeWithURL:(NSURL *)url returningError:(NSError **)err {
 	
 	if (![[url.scheme lowercaseString] isEqualToString:@"otpauth"]) {
-		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid scheme"}];
+		if (err != NULL) {
+			*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid scheme"}];
+		}
 		return nil;
 	}
 	if (![[url.host lowercaseString] isEqualToString:@"totp"]) {
-		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid host - only totp is supported"}];
+		if (err != NULL) {
+			*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid host - only totp is supported"}];
+		}
 		return nil;
 	}
 
@@ -135,7 +140,9 @@
 		code.secret = [NSData dataWithBase32String:secret];
 	}
 	else {
-		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"required field 'secret' is not present"}];
+		if (err != NULL) {
+			*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"required field 'secret' is not present"}];
+		}
 		return nil;
 	}
 	if (digits) {
