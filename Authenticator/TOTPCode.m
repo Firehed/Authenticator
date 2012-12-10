@@ -7,6 +7,9 @@
 //
 
 #import "TOTPCode.h"
+#import "MF_Base32Additions.h"
+#import "XQueryComponents.h"
+
 #include <CommonCrypto/CommonHMAC.h>
 
 @interface TOTPCode ()
@@ -85,6 +88,11 @@
     return [NSString stringWithFormat:@"%0*ld", [_digits integerValue], code];
 }
 
+-(void) setAlgorithm:(NSString *)algorithm {
+	// validate me!
+	_algorithm = [algorithm uppercaseString];
+}
+
 -(NSNumber *) timeLeftInPeriod {
 	uint64_t now = [[NSDate date] timeIntervalSince1970];
     uint64_t periods = (uint64_t) floor(now / [_step intValue]);
@@ -93,5 +101,55 @@
 
 }
 
+// Valid URL format: otpauth://type/label?params
+// type: only "totp" is supported
+// label: any string
+// params include:
+// secret: required
+// algorithm: optional (default SHA1), allowed SHA1, SHA256, SHA512
+// digits: optional (default 6), allowed numeric values >= 6
+// period: optional (default 30), allowed numeric values
++(TOTPCode *) codeWithURL:(NSURL *)url returningError:(NSError **)err {
+	
+	if (![[url.scheme lowercaseString] isEqualToString:@"otpauth"]) {
+		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid scheme"}];
+		return nil;
+	}
+	if (![[url.host lowercaseString] isEqualToString:@"totp"]) {
+		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"invalid host - only totp is supported"}];
+		return nil;
+	}
+
+	NSString *description = [[url.pathComponents objectAtIndex:1] stringByDecodingURLFormat];
+	
+	NSDictionary *query = [url queryComponents];
+	id algorithm = [query objectForKey:@"algorithm"][0];
+	id digits = [query objectForKey:@"digits"][0];
+	id period = [query objectForKey:@"period"][0];
+	id secret = [query objectForKey:@"secret"][0];
+
+	
+	TOTPCode *code = [[TOTPCode alloc] init];
+
+	if (secret) {
+		code.secret = [NSData dataWithBase32String:secret];
+	}
+	else {
+		*err = [NSError errorWithDomain:@"TOTP" code:0 userInfo:@{NSLocalizedDescriptionKey:@"required field 'secret' is not present"}];
+		return nil;
+	}
+	if (digits) {
+		code.digits = [NSNumber numberWithInt:[digits intValue]];
+	}
+	if (period) {
+		code.step = [NSNumber numberWithInt:[period intValue]];
+	}
+	if (algorithm) {
+		code.algorithm = algorithm;
+	}
+	
+	code.description = description;
+	return code;
+}
 
 @end
