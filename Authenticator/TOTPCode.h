@@ -19,5 +19,6 @@
 -(void) setDigits:(NSNumber *) digits;
 -(void) setAlgorithm:(NSString *) algorithm;
 -(NSNumber *) timeLeftInPeriod;
+-(double) progressThroughPeriod;
 +(TOTPCode *) codeWithURL:(NSURL *) url returningError:(NSError **) err;
 @end

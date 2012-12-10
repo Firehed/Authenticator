@@ -99,7 +99,13 @@
     uint64_t periods = (uint64_t) floor(now / [_step intValue]);
 	int diff = [_step intValue] - (now - (periods * [_step intValue]));
 	return [NSNumber numberWithInt:diff];
+}
 
+-(double) progressThroughPeriod {
+	double now = [[NSDate date] timeIntervalSince1970];
+	double periods = now / [_step doubleValue];
+	double pct = periods - floor(periods);
+    return pct;
 }
 
 // Valid URL format: otpauth://type/label?params
