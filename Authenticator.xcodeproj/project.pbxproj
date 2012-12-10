@@ -27,6 +27,7 @@
 		FA5804D716752EB500DEA9F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5804D516752EB500DEA9F8 /* InfoPlist.strings */; };
 		FA5804DA16752EB500DEA9F8 /* AuthenticatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804D916752EB500DEA9F8 /* AuthenticatorTests.m */; };
 		FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
+		FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		FA5804D816752EB500DEA9F8 /* AuthenticatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticatorTests.h; sourceTree = "<group>"; };
 		FA5804D916752EB500DEA9F8 /* AuthenticatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticatorTests.m; sourceTree = "<group>"; };
 		FA5804DB16752EB500DEA9F8 /* AuthenticatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuthenticatorTests-Prefix.pch"; sourceTree = "<group>"; };
+		FA5804E316753B3C00DEA9F8 /* TOTPAddCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPAddCodeViewController.h; sourceTree = "<group>"; };
+		FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPAddCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +123,13 @@
 			children = (
 				FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */,
 				FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */,
+				FA5804E316753B3C00DEA9F8 /* TOTPAddCodeViewController.h */,
+				FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */,
 				FA58048016745CD500DEA9F8 /* TOTPAppDelegate.h */,
 				FA58048116745CD500DEA9F8 /* TOTPAppDelegate.m */,
 				FA58048916745CD500DEA9F8 /* MainStoryboard_iPhone.storyboard */,
-				FA5804A1167461D100DEA9F8 /* Models */,
 				FA58048C16745CD500DEA9F8 /* MainStoryboard_iPad.storyboard */,
+				FA5804A1167461D100DEA9F8 /* Models */,
 				FA58047816745CD500DEA9F8 /* Supporting Files */,
 			);
 			path = Authenticator;
@@ -291,6 +296,7 @@
 				FA5804A0167461C900DEA9F8 /* TOTPCode.m in Sources */,
 				FA5804A816747D1200DEA9F8 /* MF_Base32Additions.m in Sources */,
 				FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */,
+				FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
