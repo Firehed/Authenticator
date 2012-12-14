@@ -73,23 +73,8 @@
     // Configure the cell...
     
 	TOTPCode *code = [_codes objectAtIndex:indexPath.row];
-//	NSNumber *timeLeft = code.timeLeftInPeriod;
-//    cell.codeLabel.text = code.currentCode;
-//    cell.descriptionLabel.text = code.description;
     cell.textLabel.text = code.description;
-//    cell.textLabel.backgroundColor = [UIColor clearColor];
-//	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@s remain", code.description, timeLeft];
-//	if ([timeLeft intValue] <= 5) {
-//		cell.contentView.backgroundColor = [UIColor redColor];
-//	}
-//	else {
-//		cell.contentView.backgroundColor = [UIColor clearColor];
-//	}
 
-//	NSLog(@"%f", code.progressThroughPeriod);
-	
-//	[cell.progressBar setProgress:code.progressThroughPeriod animated:NO];
-    
     return cell;
 }
 
