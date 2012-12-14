@@ -7,6 +7,7 @@
 //
 
 #import "TOTPCodesViewController.h"
+#import "TOTPSelectedCodeViewController.h"
 #import "TOTPCode.h"
 #import "MF_Base32Additions.h"
 #import "TOTPCodeCell.h"
@@ -68,29 +69,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TOTPCodeViewCell";
+    static NSString *CellIdentifier = @"CodeProviderCell";
     TOTPCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     
 	TOTPCode *code = [_codes objectAtIndex:indexPath.row];
-	NSNumber *timeLeft = code.timeLeftInPeriod;
-    cell.codeLabel.text = code.currentCode;
-    cell.descriptionLabel.text = code.description;
-//    cell.textLabel.text = code.currentCode;
+//	NSNumber *timeLeft = code.timeLeftInPeriod;
+//    cell.codeLabel.text = code.currentCode;
+//    cell.descriptionLabel.text = code.description;
+    cell.textLabel.text = code.description;
 //    cell.textLabel.backgroundColor = [UIColor clearColor];
 //	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@s remain", code.description, timeLeft];
-	if ([timeLeft intValue] <= 5) {
-		cell.contentView.backgroundColor = [UIColor redColor];
-	}
-	else {
-		cell.contentView.backgroundColor = [UIColor clearColor];
-	}
+//	if ([timeLeft intValue] <= 5) {
+//		cell.contentView.backgroundColor = [UIColor redColor];
+//	}
+//	else {
+//		cell.contentView.backgroundColor = [UIColor clearColor];
+//	}
 
 //	NSLog(@"%f", code.progressThroughPeriod);
 	
-	[cell.progressBar setProgress:code.progressThroughPeriod animated:NO];
+//	[cell.progressBar setProgress:code.progressThroughPeriod animated:NO];
     
     return cell;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TOTPSelectedCodeViewController *dest = [segue destinationViewController];
+    dest.code = [_codes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 }
 
 /*
