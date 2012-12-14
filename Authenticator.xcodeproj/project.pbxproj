@@ -29,7 +29,6 @@
 		FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
 		FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */; };
 		FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */; };
-		FA5804F71675C1E400DEA9F8 /* TOTPCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804F61675C1E400DEA9F8 /* TOTPCodeCell.m */; };
 		FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +65,6 @@
 		FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPAddCodeViewController.m; sourceTree = "<group>"; };
 		FA5804ED1675707A00DEA9F8 /* XQueryComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQueryComponents.h; sourceTree = "<group>"; };
 		FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQueryComponents.m; sourceTree = "<group>"; };
-		FA5804F51675C1E400DEA9F8 /* TOTPCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPCodeCell.h; sourceTree = "<group>"; };
-		FA5804F61675C1E400DEA9F8 /* TOTPCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPCodeCell.m; sourceTree = "<group>"; };
 		FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPSelectedCodeViewController.h; sourceTree = "<group>"; };
 		FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPSelectedCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,17 +127,10 @@
 		FA58047716745CD500DEA9F8 /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
-				FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */,
-				FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */,
-				FA5804E316753B3C00DEA9F8 /* TOTPAddCodeViewController.h */,
-				FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */,
+				FAFB3454167B1CC8002B6F47 /* View Controllers */,
 				FA58048016745CD500DEA9F8 /* TOTPAppDelegate.h */,
 				FA58048116745CD500DEA9F8 /* TOTPAppDelegate.m */,
 				FA58048916745CD500DEA9F8 /* MainStoryboard_iPhone.storyboard */,
-				FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */,
-				FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */,
-				FA5804F51675C1E400DEA9F8 /* TOTPCodeCell.h */,
-				FA5804F61675C1E400DEA9F8 /* TOTPCodeCell.m */,
 				FA58048C16745CD500DEA9F8 /* MainStoryboard_iPad.storyboard */,
 				FA5804F01675765A00DEA9F8 /* Libraries */,
 				FA5804A1167461D100DEA9F8 /* Models */,
@@ -201,6 +191,19 @@
 				FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		FAFB3454167B1CC8002B6F47 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA5804AC16747EDF00DEA9F8 /* TOTPCodesViewController.h */,
+				FA5804AD16747EDF00DEA9F8 /* TOTPCodesViewController.m */,
+				FA5804E316753B3C00DEA9F8 /* TOTPAddCodeViewController.h */,
+				FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */,
+				FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */,
+				FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +324,6 @@
 				FA5804AE16747EDF00DEA9F8 /* TOTPCodesViewController.m in Sources */,
 				FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */,
 				FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */,
-				FA5804F71675C1E400DEA9F8 /* TOTPCodeCell.m in Sources */,
 				FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

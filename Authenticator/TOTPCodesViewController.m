@@ -10,7 +10,6 @@
 #import "TOTPSelectedCodeViewController.h"
 #import "TOTPCode.h"
 #import "MF_Base32Additions.h"
-#import "TOTPCodeCell.h"
 
 @interface TOTPCodesViewController ()
 
