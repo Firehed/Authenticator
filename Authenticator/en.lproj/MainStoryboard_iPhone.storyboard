@@ -30,7 +30,7 @@
                                 </view>
                                 <color key="backgroundColor" red="0.92772011861313863" green="0.92236622671955659" blue="0.87103375301699482" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
-                                    <segue destination="MzM-hO-nKw" kind="push" id="qd6-iE-Ort"/>
+                                    <segue destination="MzM-hO-nKw" kind="push" identifier="SelectCode" id="qd6-iE-Ort"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

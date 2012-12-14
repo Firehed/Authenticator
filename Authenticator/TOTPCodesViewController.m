@@ -94,8 +94,10 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TOTPSelectedCodeViewController *dest = [segue destinationViewController];
-    dest.code = [_codes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+	if ([[segue identifier] isEqualToString:@"SelectCode"]) {
+		TOTPSelectedCodeViewController *dest = [segue destinationViewController];
+		dest.code = [_codes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+	}
 }
 
 /*
