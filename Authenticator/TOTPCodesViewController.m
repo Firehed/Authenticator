@@ -30,7 +30,6 @@
 
 - (void)viewDidLoad
 {
-	[NSTimer scheduledTimerWithTimeInterval:1 target:[self view] selector:@selector(reloadData) userInfo:nil repeats:YES];
     [super viewDidLoad];
 	
 	TOTPCode *code = [[TOTPCode alloc] init];
