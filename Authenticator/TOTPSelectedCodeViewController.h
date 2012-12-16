@@ -10,9 +10,9 @@
 
 @class TOTPCode;
 
-@interface TOTPSelectedCodeViewController : UIViewController
+@interface TOTPSelectedCodeViewController : UIViewController <UIAlertViewDelegate>
 
-@property (weak, nonatomic) TOTPCode *code;
+@property (weak, nonatomic) NSString *codeId;
 
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;

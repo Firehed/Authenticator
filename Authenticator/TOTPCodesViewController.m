@@ -32,12 +32,14 @@
 {
     [super viewDidLoad];
 	
-	TOTPCode *code = [[TOTPCode alloc] init];
-	code.description = @"Some dude on the internet";
-	// some guy posted a screenshot of his code to google images... using it for testing purposes. security damage already done.
-	code.secret = [NSData dataWithBase32String:@"IVCTSZVKG6ZJZ5P4"];
-	_codes = @[code];
 
+	NSUserDefaults *def = [[NSUserDefaults alloc] init];
+	NSArray *codes = [def objectForKey:@"codes"];
+	if (![codes count]) {
+		codes = @[@"Some dude on the internet"];
+	}
+	_codes = codes;
+	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -80,7 +82,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([[segue identifier] isEqualToString:@"SelectCode"]) {
 		TOTPSelectedCodeViewController *dest = [segue destinationViewController];
-		dest.code = [_codes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+		dest.codeId = [_codes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 	}
 }
 
