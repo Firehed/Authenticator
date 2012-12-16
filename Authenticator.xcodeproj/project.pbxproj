@@ -29,6 +29,8 @@
 		FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58049F167461C900DEA9F8 /* TOTPCode.m */; };
 		FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */; };
 		FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */; };
+		FA76728C167DCF130092AF17 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76728B167DCF130092AF17 /* KeychainItemWrapper.m */; };
+		FA76728F167DD4050092AF17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76728E167DD4050092AF17 /* Security.framework */; };
 		FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,9 @@
 		FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPAddCodeViewController.m; sourceTree = "<group>"; };
 		FA5804ED1675707A00DEA9F8 /* XQueryComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQueryComponents.h; sourceTree = "<group>"; };
 		FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQueryComponents.m; sourceTree = "<group>"; };
+		FA76728A167DCF130092AF17 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		FA76728B167DCF130092AF17 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		FA76728E167DD4050092AF17 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPSelectedCodeViewController.h; sourceTree = "<group>"; };
 		FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPSelectedCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA76728F167DD4050092AF17 /* Security.framework in Frameworks */,
 				FA58047216745CD500DEA9F8 /* UIKit.framework in Frameworks */,
 				FA58047416745CD500DEA9F8 /* Foundation.framework in Frameworks */,
 				FA58047616745CD500DEA9F8 /* CoreGraphics.framework in Frameworks */,
@@ -96,6 +102,7 @@
 		FA58046216745CD500DEA9F8 = {
 			isa = PBXGroup;
 			children = (
+				FA76728E167DD4050092AF17 /* Security.framework */,
 				FA58047716745CD500DEA9F8 /* Authenticator */,
 				FA5804D216752EB500DEA9F8 /* AuthenticatorTests */,
 				FA58047016745CD500DEA9F8 /* Frameworks */,
@@ -185,6 +192,8 @@
 		FA5804F01675765A00DEA9F8 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FA76728A167DCF130092AF17 /* KeychainItemWrapper.h */,
+				FA76728B167DCF130092AF17 /* KeychainItemWrapper.m */,
 				FA5804ED1675707A00DEA9F8 /* XQueryComponents.h */,
 				FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */,
 				FA5804A616747D1200DEA9F8 /* MF_Base32Additions.h */,
@@ -325,6 +334,7 @@
 				FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */,
 				FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */,
 				FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */,
+				FA76728C167DCF130092AF17 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
