@@ -61,7 +61,7 @@
 - (void)setObject:(id)inObject forKey:(id)key;
 - (id)objectForKey:(id)key;
 
-+(void) storePassword:(NSString *)password withKey:(NSString *)key inAccessGroup:(NSString *)accessGroup;
++(void) storePassword:(NSString *)password withKey:(NSString *)key inAccessGroup:(NSString *)accessGroup tiedToDevice:(BOOL) thisDeviceOnly;
 +(NSString *) passwordWithKey:(NSString *)key;
 
 // Initializes and resets the default generic keychain item data.

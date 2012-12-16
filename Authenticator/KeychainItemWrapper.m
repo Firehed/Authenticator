@@ -102,9 +102,17 @@
     NSMutableDictionary *genericPasswordQuery;	// A placeholder for the generic keychain item query used to locate the item.
 }
 
-+ (void) storePassword:(NSString *)password withKey:(NSString *)key inAccessGroup:(NSString *)accessGroup {
++ (void) storePassword:(NSString *)password withKey:(NSString *)key inAccessGroup:(NSString *)accessGroup tiedToDevice:(BOOL)thisDeviceOnly {
+	id accessLevel;
+	if (thisDeviceOnly) {
+		accessLevel = (__bridge id)kSecAttrAccessibleWhenUnlockedThisDeviceOnly;
+	}
+	else {
+		accessLevel = (__bridge id)kSecAttrAccessibleWhenUnlocked;
+	}
 	KeychainItemWrapper *kc = [[KeychainItemWrapper alloc] initWithIdentifier:key accessGroup:accessGroup];
 	[kc setObject:password forKey:(__bridge id) kSecValueData];
+	[kc setObject:accessLevel forKey:(__bridge id)kSecAttrAccessible];
 }
 +(NSString *) passwordWithKey:(NSString *)key {
 	KeychainItemWrapper *kc = [[KeychainItemWrapper alloc] initWithIdentifier:key accessGroup:nil];
