@@ -190,11 +190,12 @@
 	switch (textField.returnKeyType) {
 		case UIReturnKeyNext:
 			[self focusNextField];
-			break;
+			return NO;
 		case UIReturnKeyDone:
 		case UIReturnKeyDefault:
 			[self removeKeyboard];
 		default:
+			NSLog(@"Unhandled field type in %s: %d", __FUNCTION__, textField.returnKeyType);
 			break;
 	}
 	return YES;
