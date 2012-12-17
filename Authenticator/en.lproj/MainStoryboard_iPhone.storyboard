@@ -157,12 +157,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrC-PQ-oas">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="kVq-gX-vXe"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrC-PQ-oas">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hca-zk-NB1" id="92S-yI-ulA"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Step" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot3-wl-wp9">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -176,7 +176,10 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQ7-lQ-6A1">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hca-zk-NB1" id="i6D-e0-5QP"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Secret Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbm-3d-leU">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -185,7 +188,10 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-ED-XsW">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hca-zk-NB1" id="Ywl-6f-he1"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Account name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF0-vv-VZH">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -195,37 +201,46 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Gbm-3d-leU" firstAttribute="top" secondItem="T0Q-ED-XsW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1hM-lE-M77"/>
-                            <constraint firstItem="zmK-7t-7J7" firstAttribute="top" secondItem="g2W-lM-CnR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Hm-yQ-gj2"/>
-                            <constraint firstItem="g2W-lM-CnR" firstAttribute="top" secondItem="qEu-2C-Vhg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5CI-bR-R77"/>
+                            <constraint firstItem="OrC-PQ-oas" firstAttribute="top" secondItem="Ot3-wl-wp9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1Ex-Hf-afC"/>
+                            <constraint firstItem="g2W-lM-CnR" firstAttribute="top" secondItem="qEu-2C-Vhg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5EN-Vc-FKn"/>
+                            <constraint firstItem="Thi-VF-Cf0" firstAttribute="trailing" secondItem="OrC-PQ-oas" secondAttribute="trailing" type="default" id="6rz-9a-Mis"/>
                             <constraint firstItem="Ot3-wl-wp9" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7E5-Zr-Bam"/>
                             <constraint firstItem="SzI-5t-PLM" firstAttribute="trailing" secondItem="t1d-CB-6Ug" secondAttribute="trailing" type="default" id="A7L-Tm-Ldb"/>
-                            <constraint firstItem="OrC-PQ-oas" firstAttribute="top" secondItem="Ot3-wl-wp9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FTI-1Y-uHN"/>
-                            <constraint firstItem="T0Q-ED-XsW" firstAttribute="top" secondItem="jF0-vv-VZH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GJS-RA-PeS"/>
                             <constraint firstItem="Gbm-3d-leU" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HqX-84-jxN"/>
                             <constraint firstAttribute="trailing" secondItem="qEu-2C-Vhg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LiT-Kh-JwH"/>
+                            <constraint firstItem="Ot3-wl-wp9" firstAttribute="top" secondItem="dQ7-lQ-6A1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MvR-qh-YLW"/>
                             <constraint firstItem="SzI-5t-PLM" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" type="default" id="NaN-hc-IQO"/>
-                            <constraint firstItem="qEu-2C-Vhg" firstAttribute="top" secondItem="Thi-VF-Cf0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O1L-Lq-q35"/>
                             <constraint firstAttribute="trailing" secondItem="T0Q-ED-XsW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OuC-Zi-uz1"/>
-                            <constraint firstAttribute="bottom" secondItem="zmK-7t-7J7" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Pfu-bG-HwX"/>
-                            <constraint firstItem="Thi-VF-Cf0" firstAttribute="top" secondItem="OrC-PQ-oas" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="R3K-m6-u2X"/>
+                            <constraint firstItem="Gbm-3d-leU" firstAttribute="top" secondItem="T0Q-ED-XsW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qr0-Ve-bWq"/>
                             <constraint firstItem="zmK-7t-7J7" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="S1N-BY-VeA"/>
                             <constraint firstItem="g2W-lM-CnR" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TVs-S7-bVZ"/>
-                            <constraint firstItem="dtJ-oo-xhT" firstAttribute="leading" secondItem="OrC-PQ-oas" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="UqC-Pz-xuN"/>
-                            <constraint firstItem="dQ7-lQ-6A1" firstAttribute="top" secondItem="Gbm-3d-leU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="X9n-Ki-seO"/>
+                            <constraint firstItem="dtJ-oo-xhT" firstAttribute="leading" secondItem="OrC-PQ-oas" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Vh7-4J-cgm"/>
                             <constraint firstItem="dQ7-lQ-6A1" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZUE-NZ-dIo"/>
                             <constraint firstAttribute="trailing" secondItem="dQ7-lQ-6A1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bPb-fW-Sgk"/>
                             <constraint firstItem="qEu-2C-Vhg" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bVf-RJ-cm9"/>
                             <constraint firstAttribute="trailing" secondItem="zmK-7t-7J7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bVl-lY-DM6"/>
+                            <constraint firstItem="Thi-VF-Cf0" firstAttribute="top" secondItem="OrC-PQ-oas" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gNd-gW-5GY"/>
                             <constraint firstItem="OrC-PQ-oas" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gcE-Z5-paH"/>
-                            <constraint firstItem="Ot3-wl-wp9" firstAttribute="top" secondItem="dQ7-lQ-6A1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lK2-yE-rS0"/>
+                            <constraint firstItem="jF0-vv-VZH" firstAttribute="top" secondItem="t1d-CB-6Ug" secondAttribute="top" constant="49" id="h3b-W0-7S0"/>
+                            <constraint firstItem="zmK-7t-7J7" firstAttribute="top" secondItem="g2W-lM-CnR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lWZ-Pw-Hzf"/>
                             <constraint firstItem="SzI-5t-PLM" firstAttribute="top" secondItem="t1d-CB-6Ug" secondAttribute="top" type="default" id="p1k-wD-5Ve"/>
+                            <constraint firstItem="dQ7-lQ-6A1" firstAttribute="top" secondItem="Gbm-3d-leU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pDX-nK-DB7"/>
                             <constraint firstItem="T0Q-ED-XsW" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rL8-an-aoe"/>
                             <constraint firstItem="jF0-vv-VZH" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rxG-oG-If7"/>
+                            <constraint firstItem="qEu-2C-Vhg" firstAttribute="top" secondItem="Thi-VF-Cf0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tmk-FP-0SC"/>
+                            <constraint firstItem="dtJ-oo-xhT" firstAttribute="top" secondItem="t1d-CB-6Ug" secondAttribute="top" constant="216" id="to8-hD-XAl"/>
+                            <constraint firstItem="T0Q-ED-XsW" firstAttribute="top" secondItem="jF0-vv-VZH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uNY-eJ-jo1"/>
                             <constraint firstItem="Thi-VF-Cf0" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vzc-wW-dn8"/>
-                            <constraint firstAttribute="bottom" secondItem="dtJ-oo-xhT" secondAttribute="bottom" constant="185" id="wCD-IM-irt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountNameField" destination="T0Q-ED-XsW" id="v5x-q3-EST"/>
+                        <outlet property="algorithmControl" destination="zmK-7t-7J7" id="mgL-5H-6rh"/>
+                        <outlet property="digitsControl" destination="qEu-2C-Vhg" id="HWW-nl-hU0"/>
+                        <outlet property="saveButton" destination="dc5-lL-pNj" id="36z-7O-xVI"/>
+                        <outlet property="secretField" destination="dQ7-lQ-6A1" id="a8j-uN-6TA"/>
+                        <outlet property="stepField" destination="OrC-PQ-oas" id="79c-Kq-LRK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxX-1I-8Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,6 +274,12 @@
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="accountNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="algorithmControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="digitsControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="secretField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="stepField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="TOTPCodesViewController" superclassName="UITableViewController">
