@@ -32,19 +32,23 @@
 {
     [super viewDidLoad];
 	
-
-	NSUserDefaults *def = [[NSUserDefaults alloc] init];
-	NSArray *codes = [def objectForKey:@"codes"];
-	if (![codes count]) {
-		codes = @[@"Some dude on the internet"];
-	}
-	_codes = codes;
-	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+	NSUserDefaults *def = [[NSUserDefaults alloc] init];
+	NSArray *codes = [def objectForKey:@"codes"];
+	if (!codes) {
+		codes = @[];
+		[def setObject:codes forKey:@"codes"];
+		[def synchronize];
+	}
+	_codes = codes;
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
