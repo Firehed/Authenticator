@@ -45,7 +45,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JxJ-3A-GHg">
                             <connections>
                                 <action selector="addCodeButton:" destination="2" id="sUL-BO-Pt6"/>
-                                <segue destination="hca-zk-NB1" kind="modal" id="Uzw-fT-95R"/>
+                                <segue destination="hta-il-wgk" kind="modal" id="Uzw-fT-95R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,31 +153,14 @@
             </objects>
             <point key="canvasLocation" x="1720" y="1109"/>
         </scene>
-        <!--Add Code View Controller-->
+        <!--Add Code View Controller - Add Account-->
         <scene sceneID="y4H-wZ-qfw">
             <objects>
                 <viewController id="hca-zk-NB1" customClass="TOTPAddCodeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t1d-CB-6Ug">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzI-5t-PLM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Add Account" id="pGL-R4-hYh">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5i4-xL-0sr">
-                                            <connections>
-                                                <action selector="cancel:" destination="hca-zk-NB1" id="E5o-W9-5Lj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dc5-lL-pNj">
-                                            <connections>
-                                                <action selector="save:" destination="hca-zk-NB1" id="lWX-sK-bC2"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zmK-7t-7J7">
                                 <rect key="frame" x="20" y="344" width="280" height="29"/>
                                 <segments>
@@ -263,11 +246,9 @@
                             <constraint firstItem="g2W-lM-CnR" firstAttribute="top" secondItem="qEu-2C-Vhg" secondAttribute="bottom" constant="8" symbolic="YES" id="5EN-Vc-FKn"/>
                             <constraint firstItem="Thi-VF-Cf0" firstAttribute="trailing" secondItem="OrC-PQ-oas" secondAttribute="trailing" id="6rz-9a-Mis"/>
                             <constraint firstItem="Ot3-wl-wp9" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="7E5-Zr-Bam"/>
-                            <constraint firstItem="SzI-5t-PLM" firstAttribute="trailing" secondItem="t1d-CB-6Ug" secondAttribute="trailing" id="A7L-Tm-Ldb"/>
                             <constraint firstItem="Gbm-3d-leU" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="HqX-84-jxN"/>
                             <constraint firstAttribute="trailing" secondItem="qEu-2C-Vhg" secondAttribute="trailing" constant="20" symbolic="YES" id="LiT-Kh-JwH"/>
                             <constraint firstItem="Ot3-wl-wp9" firstAttribute="top" secondItem="dQ7-lQ-6A1" secondAttribute="bottom" constant="8" symbolic="YES" id="MvR-qh-YLW"/>
-                            <constraint firstItem="SzI-5t-PLM" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" id="NaN-hc-IQO"/>
                             <constraint firstAttribute="trailing" secondItem="T0Q-ED-XsW" secondAttribute="trailing" constant="20" symbolic="YES" id="OuC-Zi-uz1"/>
                             <constraint firstItem="Gbm-3d-leU" firstAttribute="top" secondItem="T0Q-ED-XsW" secondAttribute="bottom" constant="8" symbolic="YES" id="Qr0-Ve-bWq"/>
                             <constraint firstItem="zmK-7t-7J7" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="S1N-BY-VeA"/>
@@ -281,7 +262,6 @@
                             <constraint firstItem="OrC-PQ-oas" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="gcE-Z5-paH"/>
                             <constraint firstItem="jF0-vv-VZH" firstAttribute="top" secondItem="t1d-CB-6Ug" secondAttribute="top" constant="49" id="h3b-W0-7S0"/>
                             <constraint firstItem="zmK-7t-7J7" firstAttribute="top" secondItem="g2W-lM-CnR" secondAttribute="bottom" constant="8" symbolic="YES" id="lWZ-Pw-Hzf"/>
-                            <constraint firstItem="SzI-5t-PLM" firstAttribute="top" secondItem="t1d-CB-6Ug" secondAttribute="top" id="p1k-wD-5Ve"/>
                             <constraint firstItem="dQ7-lQ-6A1" firstAttribute="top" secondItem="Gbm-3d-leU" secondAttribute="bottom" constant="8" symbolic="YES" id="pDX-nK-DB7"/>
                             <constraint firstItem="T0Q-ED-XsW" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="rL8-an-aoe"/>
                             <constraint firstItem="jF0-vv-VZH" firstAttribute="leading" secondItem="t1d-CB-6Ug" secondAttribute="leading" constant="20" symbolic="YES" id="rxG-oG-If7"/>
@@ -292,6 +272,18 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Add Account" id="Ixo-MO-xMt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5i4-xL-0sr">
+                            <connections>
+                                <action selector="cancel:" destination="hca-zk-NB1" id="E5o-W9-5Lj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dc5-lL-pNj">
+                            <connections>
+                                <action selector="save:" destination="hca-zk-NB1" id="lWX-sK-bC2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountNameField" destination="T0Q-ED-XsW" id="v5x-q3-EST"/>
                         <outlet property="algorithmControl" destination="zmK-7t-7J7" id="mgL-5H-6rh"/>
@@ -303,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxX-1I-8Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="-249"/>
+            <point key="canvasLocation" x="1720" y="-249"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WGO-Je-fcR">
@@ -342,6 +334,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCb-5e-kWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1194" y="1109"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dkn-p3-qBq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hta-il-wgk" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="66l-SS-ZZX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hca-zk-NB1" kind="relationship" relationship="rootViewController" id="7EQ-yk-izr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEk-ZY-vfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="-249"/>
         </scene>
     </scenes>
     <classes>
