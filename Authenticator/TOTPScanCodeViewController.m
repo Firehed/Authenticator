@@ -7,12 +7,12 @@
 //
 
 #import "TOTPScanCodeViewController.h"
+#import "TOTPApp.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface TOTPScanCodeViewController ()
 
-@property double lastScan;
-//@property UILabel* labelBarcode;
+@property BOOL processing;
 
 @end
 
@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.processing = NO;
 	// Do any additional setup after loading the view.
 }
 
@@ -44,14 +45,6 @@
 - (void)viewDidAppear:(BOOL)animated {
 	
     [super viewDidAppear:animated];
-/*
-    _labelBarcode = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 40)];
-    _labelBarcode.backgroundColor = [UIColor darkGrayColor];
-    _labelBarcode.textColor = [UIColor whiteColor];
-    [self.view addSubview:_labelBarcode];
-  */  
-    _lastScan = [[NSDate date] timeIntervalSince1970];
-    
     NSError* error;
     
     AVCaptureSession* session = [[AVCaptureSession alloc] init];
@@ -69,7 +62,6 @@
     
     CALayer *rootLayer = [[self view] layer];
     [rootLayer setMasksToBounds:YES];
-//    [previewLayer setFrame:CGRectMake(-70, 60, rootLayer.bounds.size.height, rootLayer.bounds.size.height)];
     [previewLayer setFrame:CGRectMake(0, 0, rootLayer.bounds.size.height, rootLayer.bounds.size.height)];
     [rootLayer insertSublayer:previewLayer atIndex:0];
     
@@ -85,25 +77,30 @@
     output.metadataObjectTypes = @[ AVMetadataObjectTypeQRCode ];
 }
 
-
 - (void)closeModal {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-    
-	if (metadataObjects.count == 0) return;
+	// AV Framework spits output too fast, deal with dupes
+    if (self.processing) {
+		return;
+	}
+	if (!metadataObjects.count) {
+		return;
+	}
+	self.processing = YES;
+
     AVMetadataMachineReadableCodeObject* barcode = [metadataObjects objectAtIndex:0];
-	NSLog(@"%@", barcode.stringValue);
-//    _labelBarcode.text = [NSString stringWithFormat:@" SCAN >> %@", barcode.stringValue];
-    
-    double currenTime = [[NSDate date] timeIntervalSince1970];
-    if (currenTime - _lastScan >= 1) {
-        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-        _lastScan = currenTime;
-    }
-	[self closeModal];
-	// end session
+	if ([TOTPApp storeCodeWithUrl:[NSURL URLWithString:barcode.stringValue]]) {
+		AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+		[self closeModal];
+	}
+	else {
+		// Code was bogus. App handles logging
+		self.processing = NO;
+	}
+	// end AV session?
 }
 
 
