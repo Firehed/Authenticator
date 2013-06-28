@@ -31,6 +31,10 @@
 		FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */; };
 		FA76728C167DCF130092AF17 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76728B167DCF130092AF17 /* KeychainItemWrapper.m */; };
 		FA76728F167DD4050092AF17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA76728E167DD4050092AF17 /* Security.framework */; };
+		FA7858D3177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */; };
+		FA7858D4177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */; };
+		FA7858D6177E13C40002E48E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7858D5177E13C40002E48E /* AVFoundation.framework */; };
+		FA7858D8177E13FB0002E48E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7858D7177E13FB0002E48E /* AudioToolbox.framework */; };
 		FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		FA76728A167DCF130092AF17 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		FA76728B167DCF130092AF17 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		FA76728E167DD4050092AF17 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA7858D1177E124C0002E48E /* TOTPScanCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPScanCodeViewController.h; sourceTree = "<group>"; };
+		FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPScanCodeViewController.m; sourceTree = "<group>"; };
+		FA7858D5177E13C40002E48E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA7858D7177E13FB0002E48E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPSelectedCodeViewController.h; sourceTree = "<group>"; };
 		FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPSelectedCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7858D8177E13FB0002E48E /* AudioToolbox.framework in Frameworks */,
+				FA7858D6177E13C40002E48E /* AVFoundation.framework in Frameworks */,
 				FA76728F167DD4050092AF17 /* Security.framework in Frameworks */,
 				FA58047216745CD500DEA9F8 /* UIKit.framework in Frameworks */,
 				FA58047416745CD500DEA9F8 /* Foundation.framework in Frameworks */,
@@ -123,6 +133,8 @@
 		FA58047016745CD500DEA9F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA7858D7177E13FB0002E48E /* AudioToolbox.framework */,
+				FA7858D5177E13C40002E48E /* AVFoundation.framework */,
 				FA58047116745CD500DEA9F8 /* UIKit.framework */,
 				FA58047316745CD500DEA9F8 /* Foundation.framework */,
 				FA58047516745CD500DEA9F8 /* CoreGraphics.framework */,
@@ -211,6 +223,8 @@
 				FA5804E416753B3C00DEA9F8 /* TOTPAddCodeViewController.m */,
 				FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */,
 				FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */,
+				FA7858D1177E124C0002E48E /* TOTPScanCodeViewController.h */,
+				FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -262,6 +276,11 @@
 				CLASSPREFIX = TOTP;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Eric Stern";
+				TargetAttributes = {
+					FA58046C16745CD500DEA9F8 = {
+						DevelopmentTeam = ASLLFQJ445;
+					};
+				};
 			};
 			buildConfigurationList = FA58046716745CD500DEA9F8 /* Build configuration list for PBXProject "Authenticator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -335,6 +354,7 @@
 				FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */,
 				FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */,
 				FA76728C167DCF130092AF17 /* KeychainItemWrapper.m in Sources */,
+				FA7858D3177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5804DA16752EB500DEA9F8 /* AuthenticatorTests.m in Sources */,
+				FA7858D4177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */,
 				FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,9 +461,11 @@
 		FA58049516745CD500DEA9F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Authenticator/Authenticator-Prefix.pch";
 				INFOPLIST_FILE = "Authenticator/Authenticator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -453,9 +476,11 @@
 		FA58049616745CD500DEA9F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Authenticator/Authenticator-Prefix.pch";
 				INFOPLIST_FILE = "Authenticator/Authenticator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
