@@ -35,6 +35,8 @@
 		FA7858D4177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */; };
 		FA7858D6177E13C40002E48E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7858D5177E13C40002E48E /* AVFoundation.framework */; };
 		FA7858D8177E13FB0002E48E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7858D7177E13FB0002E48E /* AudioToolbox.framework */; };
+		FA7858DB177E2A870002E48E /* TOTPApp.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7858DA177E2A870002E48E /* TOTPApp.m */; };
+		FA7858DC177E2A870002E48E /* TOTPApp.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7858DA177E2A870002E48E /* TOTPApp.m */; };
 		FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		FA7858D2177E124C0002E48E /* TOTPScanCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPScanCodeViewController.m; sourceTree = "<group>"; };
 		FA7858D5177E13C40002E48E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA7858D7177E13FB0002E48E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FA7858D9177E2A870002E48E /* TOTPApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPApp.h; sourceTree = "<group>"; };
+		FA7858DA177E2A870002E48E /* TOTPApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPApp.m; sourceTree = "<group>"; };
 		FAFB344C167B0EC3002B6F47 /* TOTPSelectedCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOTPSelectedCodeViewController.h; sourceTree = "<group>"; };
 		FAFB344D167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTPSelectedCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +214,8 @@
 				FA5804EE1675707A00DEA9F8 /* XQueryComponents.m */,
 				FA5804A616747D1200DEA9F8 /* MF_Base32Additions.h */,
 				FA5804A716747D1200DEA9F8 /* MF_Base32Additions.m */,
+				FA7858D9177E2A870002E48E /* TOTPApp.h */,
+				FA7858DA177E2A870002E48E /* TOTPApp.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				FA5804E516753B3C00DEA9F8 /* TOTPAddCodeViewController.m in Sources */,
 				FA5804EF1675707A00DEA9F8 /* XQueryComponents.m in Sources */,
 				FAFB344E167B0EC3002B6F47 /* TOTPSelectedCodeViewController.m in Sources */,
+				FA7858DB177E2A870002E48E /* TOTPApp.m in Sources */,
 				FA76728C167DCF130092AF17 /* KeychainItemWrapper.m in Sources */,
 				FA7858D3177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */,
 			);
@@ -362,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7858DC177E2A870002E48E /* TOTPApp.m in Sources */,
 				FA5804DA16752EB500DEA9F8 /* AuthenticatorTests.m in Sources */,
 				FA7858D4177E124C0002E48E /* TOTPScanCodeViewController.m in Sources */,
 				FA5804E21675351F00DEA9F8 /* TOTPCode.m in Sources */,
