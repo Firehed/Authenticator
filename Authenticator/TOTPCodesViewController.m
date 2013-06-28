@@ -72,8 +72,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     
-	TOTPCode *code = [_codes objectAtIndex:indexPath.row];
-    cell.textLabel.text = code.description;
+    cell.textLabel.text = [self.codes objectAtIndex:indexPath.row];
 
     return cell;
 }
