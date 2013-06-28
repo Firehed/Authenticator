@@ -8,7 +8,8 @@
 
 #import "TOTPAddCodeViewController.h"
 #import "XQueryComponents.h"
-#import "KeychainItemWrapper.h"
+#import "TOTPApp.h"
+//#import "KeychainItemWrapper.h"
 
 @interface TOTPAddCodeViewController ()
 
@@ -54,17 +55,8 @@
 						  , [self.digitsControl titleForSegmentAtIndex:self.digitsControl.selectedSegmentIndex]
 						  , [self.algorithmControl titleForSegmentAtIndex:self.algorithmControl.selectedSegmentIndex]
 						  ];
-	// Store auth url in keychain
-	[KeychainItemWrapper storePassword:urlString withKey:self.accountNameField.text inAccessGroup:nil tiedToDevice:YES];
-	// Store item name in NSUserDefaults
-	NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-	NSMutableArray *codes = [[def objectForKey:@"codes"] mutableCopy];
-	if (!codes) {
-		codes = [[NSMutableArray alloc] init];
-	}
-	[codes addObject:self.accountNameField.text];
-	[def setObject:codes forKey:@"codes"];
-	[def synchronize];
+	NSURL *url = [NSURL URLWithString:urlString];
+	BOOL saved = [TOTPApp storeCodeWithUrl:url];
 	[self closeController];
 }
 
