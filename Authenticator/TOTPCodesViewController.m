@@ -9,7 +9,9 @@
 #import "TOTPCodesViewController.h"
 #import "TOTPSelectedCodeViewController.h"
 #import "TOTPCode.h"
-#import "MF_Base32Additions.h"
+//#import "MF_Base32Additions.h"
+#import "TOTPApp.h"
+
 
 @interface TOTPCodesViewController ()
 
@@ -40,14 +42,7 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-	NSUserDefaults *def = [[NSUserDefaults alloc] init];
-	NSArray *codes = [def objectForKey:@"codes"];
-	if (!codes) {
-		codes = @[];
-		[def setObject:codes forKey:@"codes"];
-		[def synchronize];
-	}
-	_codes = codes;
+	_codes = [TOTPApp codes];
 	[self.tableView reloadData];
 }
 
