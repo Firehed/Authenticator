@@ -21,4 +21,5 @@
 -(NSNumber *) timeLeftInPeriod;
 -(double) progressThroughPeriod;
 +(TOTPCode *) codeWithURL:(NSURL *) url returningError:(NSError **) err;
+-(NSURL *)url;
 @end

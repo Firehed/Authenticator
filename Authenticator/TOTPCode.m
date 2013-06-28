@@ -165,4 +165,13 @@
 	return code;
 }
 
+-(NSURL *)url {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"otpauth://totp/%@?secret=%@&digits=%@&period=%@&algorithm=%@"
+								, self.description.stringByEncodingURLFormat
+								, self.secret.base32String
+								, self.digits
+								, self.step
+								, self.algorithm]];
+}
+
 @end
