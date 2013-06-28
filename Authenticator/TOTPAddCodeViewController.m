@@ -120,13 +120,13 @@
 
 -(void) setupKeyboard {
 	UISegmentedControl *prevNext = [[UISegmentedControl alloc] initWithItems:@[@"Previous", @"Next"]];
-	prevNext.segmentedControlStyle = UISegmentedControlStyleBar;
 	prevNext.momentary = YES;
 	[prevNext addTarget:self action:@selector(handlePrevNext:) forControlEvents:UIControlEventValueChanged];
 	[prevNext sizeToFit];
 	
 	UIToolbar *toolbar = [[UIToolbar alloc] init];
-	toolbar.barStyle = UIBarStyleBlackTranslucent;
+	toolbar.barStyle = UIBarStyleDefault;
+	toolbar.tintColor = self.view.tintColor;
 	toolbar.items =
 	@[ [[UIBarButtonItem alloc] initWithCustomView:prevNext]
 	 , [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]
