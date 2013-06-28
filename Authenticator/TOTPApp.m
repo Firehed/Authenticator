@@ -10,14 +10,16 @@
 #import "TOTPCode.h"
 #import "KeychainItemWrapper.h"
 
+NSString* const codesKey = @"codes";
+
 @implementation TOTPApp
 
 +(NSArray *)codes {
 	NSUserDefaults *def = [[NSUserDefaults alloc] init];
-	NSArray *codes = [def objectForKey:@"codes"];
+	NSArray *codes = [def objectForKey:codesKey];
 	if (!codes) {
 		codes = @[];
-		[def setObject:codes forKey:@"codes"];
+		[def setObject:codes forKey:codesKey];
 		[def synchronize];
 	}
 	return codes;
