@@ -16,5 +16,6 @@
 
 +(TOTPCode *) codeWithName:(NSString *)name;
 
++(BOOL)storeCodeWithUrl:(NSURL *)url;
 
 @end

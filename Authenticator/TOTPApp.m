@@ -38,4 +38,24 @@ NSString* const codesKey = @"codes";
 	return ret;
 }
 
++(BOOL)storeCodeWithUrl:(NSURL *)url {
+	NSError *err;
+	TOTPCode *code = [TOTPCode codeWithURL:url returningError:&err];
+	if (code == nil) {
+		NSLog(@"Could not store TOTPCode: %@", err);
+		return NO;
+	}
+	
+	// Store auth url in keychain
+	[KeychainItemWrapper storePassword:url.absoluteString withKey:code.description inAccessGroup:nil tiedToDevice:YES];
+	// Store item name in NSUserDefaults
+	NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+	NSMutableArray *codes = [[TOTPApp codes] mutableCopy];
+	[codes addObject:code.description];
+	[def setObject:codes forKey:codesKey];
+	[def synchronize];
+	return YES;
+
+}
+
 @end
