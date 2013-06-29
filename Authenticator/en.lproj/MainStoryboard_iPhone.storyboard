@@ -37,7 +37,7 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="dPn-N9-7BO">
-                        <barButtonItem key="leftBarButtonItem" title="Scan" id="hW2-ie-Rgi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="hW2-ie-Rgi">
                             <connections>
                                 <segue destination="oq4-aq-KHc" kind="modal" id="Qb9-5X-hZb"/>
                             </connections>
