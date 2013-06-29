@@ -56,8 +56,14 @@
 						  , [self.algorithmControl titleForSegmentAtIndex:self.algorithmControl.selectedSegmentIndex]
 						  ];
 	NSURL *url = [NSURL URLWithString:urlString];
-	BOOL saved = [TOTPApp storeCodeWithUrl:url];
-	[self closeController];
+	if ([TOTPApp storeCodeWithUrl:url]) {
+		[self closeController];
+	}
+	else {
+		NSLog(@"Code with url %@ could not be saved", urlString);
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Unable to save code. Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+	}
 }
 
 -(IBAction)cancel:(id)sender {
